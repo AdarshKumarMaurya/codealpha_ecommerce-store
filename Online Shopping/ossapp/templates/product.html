@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}
+Products
+{% endblock %}
+
+{% block content %}
+<!--
+{% for x in products %}
+<h4>{{x.name}} {{x.price}} {{x.image}}</h4>
+{% endfor %}
+-->
+<!--
+{% for ctg in category %}
+<p>{{ctg.name}}</p>
+{% endfor %}
+-->
+<div class="row mt-5">
+    <div class="col-sm-2">
+        <div class="list-group">
+             <a href="/product?" class="list-group-item list-group-item-action">All Products</a>
+            {% for ctg in category %}
+            <a href="/product?category={{ctg.id}}" class="list-group-item list-group-item-action">{{ctg.name}}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+    <div class="col-sm">
+        <div class="row">
+            {% for product in products %}
+            <div class="col-sm-auto mb-5" >
+                <div class="card" style="width: 18rem;">
+                    <img src="{{product.image.url}}" class="card-img-top " alt="..." style="height:15vw;object-fit:cover">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">Rs. {{product.price}}</p>
+                        <p class="card-text">{{product.desc}}</p>
+                        <a href="#" class="btn btn-warning">Add To Card</a>
+                        <a href="#" class="btn btn-warning float-end">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}
+Sign Up!
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-md-center mt-5">
+    <div class="col-sm-4">
+
+        <h2 class="text-center">Sign Up!</h2>
+        {% if err %}
+        <div class="alert alert-danger" role="alert">
+            {{err}}
+        </div>
+        {% endif %}
+
+
+
+        <form class="mt-5" action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="row mb-3">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input name="name" type="text" class="form-control" id="name" value="{{values.name}}" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input name="email" type="email" class="form-control" id="email" value="{{values.email}}" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input name="password" type="password" class="form-control" id="password" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label name='address' for="address" class="col-sm-2 form-label">Address</label>
+                <div class="col-sm-10">
+                    <textarea name="address" class="form-control" id="address" rows="3"  required>{{values.addr}}</textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="pincode" class="col-sm-2 col-form-label">Pincode</label>
+                <div class="col-sm-10">
+                    <input name="pincode" type="text" value="{{values.pin}}" class="form-control" id="pincode" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="phone" class="col-sm-2 col-form-label" >Contact Number</label>
+                <div class="col-sm-10">
+                    <input name="phone" type="text" class="form-control" value="{{values.phone}}" id="phone" required>
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" required >
+                        <label class="form-check-label" for="gender1">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="gender2" value="female" required>
+                        <label class="form-check-label" for="gender2">
+                            Female
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning ">Sign Up</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

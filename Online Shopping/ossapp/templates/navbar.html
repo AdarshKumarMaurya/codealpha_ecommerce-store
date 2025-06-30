@@ -1,0 +1,55 @@
+{% load static %}
+
+<!-- headline start -->
+            <div class="row bg-warning pt-2">
+                <div class="col-sm-3 pt-2"><i class="fa-solid fa-phone"></i> Call Us: +91 1111111111</div>
+                <div class="col-sm-3 pt-2"><i class="fa-solid fa-envelope"></i> Mail Us: email@gmail.com</div>
+                <div class="col-sm-6 text-end">
+                    <!-- ====social media icons==== -->
+                    <ul class="smi">
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-google"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- headline end -->
+              <!-- navbar start -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <nav class="navbar navbar-expand-lg bg-light">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="#"><img src="{% static 'images/29.jpg' %}" alt="" height="50px"></a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'product' %}">Products</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'register' %}">Register</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                              </li>
+
+                            </ul>
+                            <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                              <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+            <!-- navbar end -->
